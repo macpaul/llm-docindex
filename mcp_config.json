@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "document-token-optimizer": {
+      "command": "/opt/doc-token-tools/bin/python",
+      "args": [
+        "/home/macpaul/doc-codeindex/scripts/doc_mcp_server.py"
+      ],
+      "env": {
+        "NODE_PATH": "/usr/local/lib/node_modules"
+      }
+    }
+  }
+}
