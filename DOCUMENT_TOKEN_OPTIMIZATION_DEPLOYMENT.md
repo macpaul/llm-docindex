@@ -305,3 +305,9 @@ To enable autonomous agent discovery, capabilities are packaged following the `S
 | `skills/fastmcp-document-server`| FastMCP stdio server | Model Context Protocol tools provider |
 
 The included `install-skills.sh` script installs and symlinks skills for both workspace discovery (`.agents/skills/`) and global agent discovery (`~/.agents/skills/` and `~/.gemini/config/skills/`).
+
+---
+
+## 8. License
+
+This deployment suite and associated tooling are distributed under the terms of the **GNU Affero General Public License v3.0 (AGPL-3.0)**. See [LICENSE](file:///home/macpaul/doc-codeindex/LICENSE) for the complete legal text.
