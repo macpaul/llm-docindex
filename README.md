@@ -1,5 +1,7 @@
 # LLM Document Token Optimization & Retrieval Suite
 
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL_3.0-blue.svg)](file:///home/macpaul/doc-codeindex/LICENSE)
+
 Comprehensive toolchain, deployment scripts, helper utilities, and AI coding CLI skills for minimizing LLM context window token waste across multi-format documents (PDF, DOCX, PPTX, XLSX, HTML), web pages, and codebases.
 
 Based on the architectural study and engineering practices detailed in [LLM-Document-Token-Optimization.md](file:///home/macpaul/doc-codeindex/LLM-Document-Token-Optimization.md) and [DOCUMENT_TOKEN_OPTIMIZATION_DEPLOYMENT.md](file:///home/macpaul/doc-codeindex/DOCUMENT_TOKEN_OPTIMIZATION_DEPLOYMENT.md).
