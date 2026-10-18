@@ -164,11 +164,11 @@ if command -v node >/dev/null 2>&1; then
         local pkg="$1"
         local is_critical="${2:-true}"
 
-        if node -e "require('${pkg}')" >/dev/null 2>&1; then
+        if node -e "require.resolve('${pkg}')" >/dev/null 2>&1; then
             log_pass "Node package '${pkg}' is resolvable"
         else
             if [[ "${is_critical}" == "true" ]]; then
-                log_fail "Node package '${pkg}' cannot be required"
+                log_fail "Node package '${pkg}' cannot be resolved"
             else
                 log_warn "Node package '${pkg}' not resolvable globally"
             fi
