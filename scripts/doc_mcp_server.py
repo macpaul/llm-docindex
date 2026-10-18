@@ -9,6 +9,7 @@ and web content purification tools to AI Agents (Claude Desktop, Antigravity, Cu
 import os
 import sys
 from pathlib import Path
+from typing import Optional, Dict, Any
 from fastmcp import FastMCP
 
 # Initialize FastMCP Server
@@ -73,12 +74,12 @@ def read_document_optimized(file_path: str, engine: str = "auto") -> str:
 @mcp.tool
 def incremental_docx_update(
     file_path: str,
-    find_text: str = None,
-    replace_text: str = None,
-    xpath_query: str = None,
-    new_text: str = None,
+    find_text: Optional[str] = None,
+    replace_text: Optional[str] = None,
+    xpath_query: Optional[str] = None,
+    new_text: Optional[str] = None,
     dry_run: bool = False,
-) -> dict:
+) -> Dict[str, Any]:
     """
     Incrementally modify a Word (.docx) document via XML node patching.
     Avoids rewriting the whole document, saving >95% output tokens and preserving
@@ -121,7 +122,7 @@ def purify_web_content(url_or_html: str, is_url: bool = True) -> str:
 
         if is_url:
             html = fetch_url_html(url_or_html)
-            url = url_or_html
+            url: Optional[str] = url_or_html
         else:
             html = url_or_html
             url = None
