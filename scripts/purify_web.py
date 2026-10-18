@@ -11,9 +11,10 @@ import argparse
 import subprocess
 import sys
 from pathlib import Path
+from typing import Optional
 
 
-def purify_with_trafilatura(html_content: str, url: str = None) -> str:
+def purify_with_trafilatura(html_content: str, url: Optional[str] = None) -> str:
     import trafilatura
     result = trafilatura.extract(
         html_content,
