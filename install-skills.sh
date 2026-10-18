@@ -34,7 +34,7 @@ SKILL_COUNT=0
 for skill_path in "${SKILLS_DIR}"/*; do
     if [[ -d "${skill_path}" && -f "${skill_path}/SKILL.md" ]]; then
         skill_name="$(basename "${skill_path}")"
-        ((SKILL_COUNT++))
+        SKILL_COUNT=$((SKILL_COUNT + 1))
 
         # 1. Workspace scope (.agents/skills/<skill>) -> relative link
         ln -sf "../../skills/${skill_name}" "${WORKSPACE_SKILLS_DIR}/${skill_name}"
