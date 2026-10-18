@@ -9,11 +9,13 @@ Saves >95% LLM output tokens compared to full document regeneration.
 
 import argparse
 import json
+import os
 import shutil
 import sys
 import tempfile
 import zipfile
 from pathlib import Path
+from typing import Optional, Dict, Any, List
 from lxml import etree
 
 # Standard OpenXML namespaces
@@ -31,14 +33,14 @@ NAMESPACES = {
 
 def patch_docx(
     docx_path: str,
-    xpath_query: str = None,
-    new_text: str = None,
-    find_text: str = None,
-    replace_text: str = None,
+    xpath_query: Optional[str] = None,
+    new_text: Optional[str] = None,
+    find_text: Optional[str] = None,
+    replace_text: Optional[str] = None,
     target_part: str = "word/document.xml",
-    output_path: str = None,
+    output_path: Optional[str] = None,
     dry_run: bool = False,
-) -> dict:
+) -> Dict[str, Any]:
     docx_file = Path(docx_path).resolve()
     if not docx_file.exists():
         return {"status": "error", "message": f"File not found: {docx_path}"}
@@ -140,8 +142,6 @@ def patch_docx(
 
 
 def main():
-    import os
-
     parser = argparse.ArgumentParser(
         description="Surgically patch Microsoft Word (.docx) XML nodes via XPath or text replacement."
     )
